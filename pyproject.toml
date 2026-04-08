@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.scripts]
-server = "server:app"
+server = "main:app"
 
 [project.optional-dependencies]
 dev = ["pytest", "httpx"]
