@@ -73,7 +73,7 @@ def _load_manifest() -> Dict[str, Any]:
 # ------------------------------------------------------------------
 
 @app.post("/reset", response_model=TicketObservation)
-def reset(body: ResetRequest) -> TicketObservation:
+def reset(body: ResetRequest = ResetRequest()) -> TicketObservation:
     """Reset the environment with a new task and return the first observation."""
     global _env
     try:
