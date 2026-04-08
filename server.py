@@ -72,7 +72,7 @@ def _load_manifest() -> Dict[str, Any]:
 # Endpoints
 # ------------------------------------------------------------------
 
-@app.post("/reset", response_model=TicketObservation)
+@app.api_route("/reset", methods=["GET", "POST"], response_model=TicketObservation)
 def reset(body: ResetRequest = ResetRequest()) -> TicketObservation:
     """Reset the environment with a new task and return the first observation."""
     global _env
