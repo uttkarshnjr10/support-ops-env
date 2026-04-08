@@ -1,0 +1,31 @@
+name: support-ops-env
+version: "1.0.0"
+description: "Customer support ticket resolution environment for AI agent training"
+author: "SupportOpsEnv Team"
+license: mit
+tags:
+  - customer-support
+  - nlp
+  - text
+tasks:
+  - name: ticket-classify
+    description: "Classify support ticket by category and priority"
+    difficulty: easy
+    max_steps: 1
+    reward_range: [0.0, 1.0]
+  - name: ticket-respond
+    description: "Draft appropriate customer response for a support ticket"
+    difficulty: medium
+    max_steps: 3
+    reward_range: [0.0, 1.0]
+  - name: ticket-resolve
+    description: "Fully resolve a support case through multi-turn interaction"
+    difficulty: hard
+    max_steps: 6
+    reward_range: [0.0, 1.0]
+action_space:
+  type: text
+  description: "JSON action with action_type and content fields"
+observation_space:
+  type: text
+  description: "Ticket details and conversation history"
